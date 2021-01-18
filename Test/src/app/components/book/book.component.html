@@ -1,0 +1,55 @@
+<!-- List Header with Outline Button -->
+<ion-list-header lines="inset">
+  <ion-label>My library</ion-label>
+  <ion-button fill="outline" class="button New Page" href="/book">New Book</ion-button>
+</ion-list-header>
+
+
+  <ion-list>
+    <div id="List">
+    <ion-item *ngFor="let i of options">
+      <ion-label *ngFor="let books of i">{{books}}</ion-label>
+      <ion-button (click)="DeleteThisbook(i)">Delete Book</ion-button>
+    </ion-item>
+    </div>
+    <div id="Add"></div>
+  
+  </ion-list>
+
+
+
+
+<ion-list-header lines="inset">
+  <ion-label>New Book</ion-label>
+  <ion-button fill="outline" class="button Add New" (click)="addBook(
+    ISBN.value, 
+    bookName.value, 
+    authorName.value, 
+    publisherName.value, 
+    yearEdit.value)">Add Book</ion-button>
+</ion-list-header>
+
+
+
+<ion-list>
+  <ion-item>
+    <ion-label>ISBN:</ion-label>
+    <ion-input  #ISBN></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>bookName:</ion-label>
+    <ion-input  #bookName></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>authorName:</ion-label>
+    <ion-input  #authorName></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>publisherName:</ion-label>
+    <ion-input  #publisherName></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>yearEdit:</ion-label>
+    <ion-input  #yearEdit></ion-input>
+  </ion-item>
+</ion-list>
